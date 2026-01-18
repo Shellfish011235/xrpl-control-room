@@ -1,4 +1,4 @@
-export { PanelDock, PinButton } from './PanelDock';
+﻿export { PanelDock, PinButton } from './PanelDock';
 export { GuidedPath, GuidedPathCompact } from './GuidedPath';
 export { ScannerToggle, ScannerOverlay, ScannerSection } from './ScannerMode';
 export { DataTable, ComparisonTable } from './DataTable';
@@ -12,3 +12,4 @@ export {
   Sparkline,
   MetricDisplay 
 } from './Charts';
+export { LoadingSpinner, LoadingOverlay, SectionLoader } from './LoadingSpinner';

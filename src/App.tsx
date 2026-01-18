@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { useControlRoomStore } from './store';
 import { ContributorsTab, TechnicalTab, RegulationsTab, StablecoinsTab, ResourcesTab, OverworldTab } from './components/tabs';
 import { PanelDock, ScannerToggle, ScannerOverlay, FeedSidebar } from './components/shared';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import type { TabId, Tab } from './types';
 
 const tabs: Tab[] = [
@@ -43,7 +44,7 @@ function TabContent({ tabId }: { tabId: TabId }) {
   }
 }
 
-export default function App() {
+function AppContent() {
   const { activeTab, setActiveTab, scanner, toggleScanner } = useControlRoomStore();
   
   // Keyboard shortcuts
@@ -182,5 +183,14 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// Wrap entire app with ErrorBoundary
+export default function App() {
+  return (
+    <ErrorBoundary>
+      <AppContent />
+    </ErrorBoundary>
   );
 }
